@@ -1,4 +1,4 @@
-import { Dispatch, ReactElement, SetStateAction } from 'react';
+import { Dispatch, ReactElement, ReactNode, SetStateAction } from 'react';
 
 export interface CalendarContext {
 	dates: Date[];
@@ -9,6 +9,11 @@ export interface CalendarContext {
 	setColumnsNumber: Dispatch<SetStateAction<number>>;
 	selectedItem: number | null;
 	setSelectedItem: Dispatch<SetStateAction<number | null>>;
+}
+
+export interface CalendarContainerProps {
+	children: ReactNode;
+	onSelectionChanged?: (selectedDate: Date | null) => void;
 }
 
 export interface CalendarHeaderProps {
@@ -33,9 +38,8 @@ export interface CalendarItemsContainerProps {
 export interface CalendarItemProps {
 	itemDate: Date | null;
 	disabled: boolean;
-	status: 'normal' | 'pending' | 'alert' | 'hidden';
+	status: 'normal' | 'pending' | 'alert' | 'done' | 'hidden';
 	renderText: (date: Date) => string | ReactElement;
-	onClick?: (date: Event) => void;
 }
 
 export interface CalendarLabels {

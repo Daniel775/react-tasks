@@ -1,5 +1,6 @@
 import { StyledCalendarItem } from './styles';
 import { CalendarItemProps } from '../../../types';
+import { useCalendar } from '../../../contexts/CalendarContext';
 
 export function CalendarItem({
 	itemDate,
@@ -7,8 +8,24 @@ export function CalendarItem({
 	disabled,
 	renderText
 }: CalendarItemProps): React.FunctionComponentElement<CalendarItemProps> {
+	const calendar = useCalendar();
+	const itemTime = itemDate?.getTime();
+
+	function handleSelection() {
+		if (disabled) {
+			return;
+		}
+
+		calendar.setSelectedItem(itemTime || null);
+	}
+
 	return (
-		<StyledCalendarItem $status={status} $disabled={disabled}>
+		<StyledCalendarItem
+			$status={status}
+			$disabled={disabled}
+			$selected={calendar.selectedItem === itemTime}
+			onClick={handleSelection}
+		>
 			{!!itemDate && renderText(itemDate)}
 		</StyledCalendarItem>
 	);

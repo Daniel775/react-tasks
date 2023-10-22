@@ -1,6 +1,7 @@
-import React, { PropsWithChildren } from 'react';
+import React from 'react';
 import { Meta, StoryObj } from '@storybook/react';
 import Calendar from './index';
+import { CalendarContainerProps } from '../../types';
 
 const meta: Meta<typeof Calendar.CalendarContainer> = {
 	component: Calendar.CalendarContainer,
@@ -11,11 +12,12 @@ export default meta;
 
 type Story = StoryObj<typeof Calendar.CalendarContainer>;
 
-export const Primary: Story = (args: PropsWithChildren) => (
+export const Primary: Story = (args: CalendarContainerProps) => (
 	<Calendar.CalendarContainer {...args} />
 );
 
 Primary.args = {
+	onSelectionChanged: (date) => console.log(date),
 	children: (
 		<>
 			<Calendar.CalendarHeader />

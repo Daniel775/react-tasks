@@ -1,13 +1,31 @@
-import { PropsWithChildren } from 'react';
-import { CalendarProvider } from '../../../contexts/CalendarContext';
+import { useEffect } from 'react';
+import {
+	useCalendar,
+	CalendarProvider
+} from '../../../contexts/CalendarContext';
 import { StyledCalendarContainer } from './styles';
+import { CalendarContainerProps } from '../../../types';
 
-export function CalendarContainer({
-	children
-}: PropsWithChildren): React.FunctionComponentElement<PropsWithChildren> {
-	return (
-		<CalendarProvider>
-			<StyledCalendarContainer>{children}</StyledCalendarContainer>
-		</CalendarProvider>
-	);
+function Container({
+	children,
+	onSelectionChanged
+}: CalendarContainerProps): React.FunctionComponentElement<CalendarContainerProps> {
+	const calendar = useCalendar();
+
+	useEffect(() => {
+		if (!onSelectionChanged) {
+			return;
+		}
+		onSelectionChanged(
+			!calendar.selectedItem ? null : new Date(calendar.selectedItem)
+		);
+	}, [calendar.selectedItem]);
+
+	return <StyledCalendarContainer>{children}</StyledCalendarContainer>;
 }
+
+export const CalendarContainer = (props: CalendarContainerProps) => (
+	<CalendarProvider>
+		<Container {...props} />
+	</CalendarProvider>
+);
