@@ -6,12 +6,12 @@ import { CalendarItemsContainer } from './CalendarItemsContainer';
 import { CalendarItem } from './CalendarItem';
 
 const Calendar = {
-	CalendarContainer,
-	CalendarHeader,
-	CalendarColumnsContainer,
-	CalendarColumn,
-	CalendarItemsContainer,
-	CalendarItem
+	Container: CalendarContainer,
+	Header: CalendarHeader,
+	ColumnsContainer: CalendarColumnsContainer,
+	Column: CalendarColumn,
+	ItemsContainer: CalendarItemsContainer,
+	Item: CalendarItem
 };
 
 export default Calendar;
