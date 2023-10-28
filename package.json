@@ -7,10 +7,7 @@
 	"types": "dist/index.d.ts",
 	"author": "Daniel M Bomfim",
 	"license": "MIT",
-	"dependencies": {
-		"lodash": "^4.17.21",
-		"luxon": "^3.4.3"
-	},
+	"dependencies": {},
 	"peerDependencies": {
 		"styled-components": ">= 6"
 	},
@@ -29,8 +26,6 @@
 		"@storybook/react": "^7.5.0",
 		"@storybook/react-vite": "^7.5.0",
 		"@storybook/testing-library": "^0.2.2",
-		"@types/lodash": "^4.14.200",
-		"@types/luxon": "^3.3.3",
 		"@types/react": "^18.2.29",
 		"@types/styled-components": "^5.1.29",
 		"@typescript-eslint/eslint-plugin": "^6.8.0",
