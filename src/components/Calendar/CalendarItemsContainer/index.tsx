@@ -144,9 +144,9 @@ function setCalendarItemsStatus(
 	data: CalendarItemProps[],
 	fillEmptySlots: boolean
 ) {
-	data.forEach((data) => {
-		if (!data.itemDate && !fillEmptySlots) {
-			data.status = 'hidden';
-		}
-	});
+	if (fillEmptySlots) {
+		return;
+	}
+
+	data.forEach((data) => (data.status = 'hidden'));
 }
