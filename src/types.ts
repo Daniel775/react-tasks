@@ -1,4 +1,11 @@
-import { Dispatch, ReactElement, ReactNode, SetStateAction } from 'react';
+import {
+	ButtonHTMLAttributes,
+	Dispatch,
+	ElementType,
+	ReactElement,
+	ReactNode,
+	SetStateAction
+} from 'react';
 
 export interface CalendarContext {
 	dates: Date[];
@@ -53,3 +60,13 @@ export interface CalendarLabels {
 }
 
 export type CalendarLabelsIndice = '0' | '1' | '2' | '3' | '4' | '5' | '6';
+
+export interface TaskComponentProps {
+	children: ReactNode;
+	icon?: ElementType;
+}
+
+export interface TaskActionProps
+	extends ButtonHTMLAttributes<HTMLButtonElement> {
+	icon: ElementType;
+}
