@@ -1,6 +1,6 @@
 {
   "name": "react-tasks-calendar",
-  "version": "0.0.0-development",
+  "version": "1.0.0",
   "description": "A react tasks component",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
