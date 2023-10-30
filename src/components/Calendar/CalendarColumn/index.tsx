@@ -23,16 +23,23 @@ export function CalendarColumn({
 	return <StyledCalendarColumn>{renderText(weekDay)}</StyledCalendarColumn>;
 }
 
-const defaultLabels: CalendarLabels = {
-	'0': 'dom.',
-	'1': 'seg.',
-	'2': 'ter.',
-	'3': 'qua.',
-	'4': 'qui.',
-	'5': 'sex.',
-	'6': 'sáb'
-};
+const defaultLabels: CalendarLabels = getDefaultLabels();
 
 function renderDefaultLabel(weekDay: CalendarLabelsIndice): string {
 	return defaultLabels[weekDay] as string;
+}
+
+function getDefaultLabels(): CalendarLabels {
+	const baseDay = 22;
+	const labels: { [key: string]: string } = {};
+
+	for (let i = 0; i < 7; i++) {
+		const baseDate = new Date(2023, 9, baseDay + i);
+		const dateString = baseDate.toLocaleTimeString(navigator.language, {
+			weekday: 'long'
+		});
+		labels[i] = dateString.substring(0, 3) + '.';
+	}
+
+	return labels;
 }
