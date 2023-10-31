@@ -1,6 +1,6 @@
 # react-tasks-calendar [![ci](https://github.com/danielmbomfim/react-tasks-calendar/actions/workflows/workflow.yml/badge.svg)](https://github.com/Daniel775/projects-manager-api/actions/workflows/ci.yml) [![npm version](https://badge.fury.io/js/react-tasks-calendar.svg)](https://badge.fury.io/js/react-tasks-calendar) [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 
-React Native Share, is a simple tool for sharing messages and files with other apps.
+Calendar and tasks components for React
 
 # Getting started 🚀
 
