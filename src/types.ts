@@ -10,8 +10,8 @@ import {
 export interface CalendarContext {
 	dates: Date[];
 	setDates: Dispatch<SetStateAction<Date[]>>;
-	columns: CalendarLabelsIndice[];
-	setColumns: Dispatch<SetStateAction<CalendarLabelsIndice[]>>;
+	columns: CalendarLabelsIndex[];
+	setColumns: Dispatch<SetStateAction<CalendarLabelsIndex[]>>;
 	columnsNumber: number;
 	setColumnsNumber: Dispatch<SetStateAction<number>>;
 	selectedItem: number | null;
@@ -28,8 +28,8 @@ export interface CalendarHeaderProps {
 }
 
 export interface CalendarColumnProps {
-	weekDay: CalendarLabelsIndice;
-	renderText?: (weekDay: CalendarLabelsIndice) => string | ReactElement;
+	weekDay: CalendarLabelsIndex;
+	renderText?: (weekDay: CalendarLabelsIndex) => string | ReactElement;
 }
 
 export interface CalendarItemsContainerProps {
@@ -59,7 +59,7 @@ export interface CalendarLabels {
 	'6'?: string;
 }
 
-export type CalendarLabelsIndice = '0' | '1' | '2' | '3' | '4' | '5' | '6';
+export type CalendarLabelsIndex = '0' | '1' | '2' | '3' | '4' | '5' | '6';
 
 export interface TaskComponentProps {
 	children: ReactNode;
