@@ -96,11 +96,14 @@ export interface CalendarLabels {
 export type CalendarLabelsIndex = '0' | '1' | '2' | '3' | '4' | '5' | '6';
 
 export interface TaskComponentProps {
+	/** A node of components to be rendered inside the task component */
 	children: ReactNode;
+	/** A icon element to be rendered on the left corner of the task */
 	icon?: ElementType;
 }
 
 export interface TaskActionProps
 	extends ButtonHTMLAttributes<HTMLButtonElement> {
+	/** A icon to bee rendered inside the action button */
 	icon: ElementType;
 }
