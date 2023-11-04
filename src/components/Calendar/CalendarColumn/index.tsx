@@ -4,7 +4,7 @@ import { StyledCalendarColumn } from './styles';
 import {
 	CalendarColumnProps,
 	CalendarLabels,
-	CalendarLabelsIndice
+	CalendarLabelsIndex
 } from '../../../types';
 
 export function CalendarColumn({
@@ -25,7 +25,7 @@ export function CalendarColumn({
 
 const defaultLabels: CalendarLabels = getDefaultLabels();
 
-function renderDefaultLabel(weekDay: CalendarLabelsIndice): string {
+function renderDefaultLabel(weekDay: CalendarLabelsIndex): string {
 	return defaultLabels[weekDay] as string;
 }
 

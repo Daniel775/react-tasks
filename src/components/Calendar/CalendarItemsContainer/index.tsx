@@ -5,7 +5,7 @@ import { StyledCalendarItemsContainer } from './styles';
 import {
 	CalendarItemsContainerProps,
 	CalendarItemProps,
-	CalendarLabelsIndice
+	CalendarLabelsIndex
 } from '../../../types';
 
 export function CalendarItemsContainer({
@@ -19,7 +19,7 @@ export function CalendarItemsContainer({
 	useEffect(() => {
 		const range = getDatesRange(startDate, endDate);
 		calendar.setDates(
-			filterDates(range, calendar.columns as CalendarLabelsIndice[])
+			filterDates(range, calendar.columns as CalendarLabelsIndex[])
 		);
 	}, [calendar.columns]);
 
@@ -29,7 +29,7 @@ export function CalendarItemsContainer({
 		}
 
 		const firsItemIndex = calendar.columns.indexOf(
-			calendar.dates[0].getDay().toString() as CalendarLabelsIndice
+			calendar.dates[0].getDay().toString() as CalendarLabelsIndex
 		);
 
 		const initialEmptyItems = getInitinalEmptyCalendarItems(
@@ -70,7 +70,7 @@ export function CalendarItemsContainer({
 
 function getInitinalEmptyCalendarItems(
 	firstValidItemIndex: number,
-	columns: CalendarLabelsIndice[],
+	columns: CalendarLabelsIndex[],
 	baseDate: Date
 ): CalendarItemProps[] {
 	const items: CalendarItemProps[] = [];
@@ -132,10 +132,10 @@ function getDatesRange(startDate: Date, endDate: Date): Date[] {
 	return rangeDates;
 }
 
-function filterDates(range: Date[], weekDays: CalendarLabelsIndice[]) {
+function filterDates(range: Date[], weekDays: CalendarLabelsIndex[]) {
 	return range.filter((date) => {
 		return weekDays.includes(
-			date.getDay().toString() as CalendarLabelsIndice
+			date.getDay().toString() as CalendarLabelsIndex
 		);
 	});
 }

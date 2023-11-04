@@ -5,13 +5,13 @@ import {
 	PropsWithChildren,
 	useMemo
 } from 'react';
-import { CalendarContext, CalendarLabelsIndice } from '../types';
+import { CalendarContext, CalendarLabelsIndex } from '../types';
 
 const calendarContext = createContext<CalendarContext>({} as CalendarContext);
 
 export const CalendarProvider = ({ children }: PropsWithChildren) => {
 	const [dates, setDates] = useState<Date[]>([]);
-	const [columns, setColumns] = useState<CalendarLabelsIndice[]>([]);
+	const [columns, setColumns] = useState<CalendarLabelsIndex[]>([]);
 	const [columnsNumber, setColumnsNumber] = useState<number>(0);
 	const [selectedItem, setSelectedItem] = useState<number | null>(null);
 
