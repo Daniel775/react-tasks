@@ -132,3 +132,100 @@ function TasksList() {
 The code above will result in someting like:
 
 ![image](https://github.com/danielmbomfim/react-tasks-calendar/assets/35501831/17345c4f-90c0-4db4-825a-9b112519df78)
+
+## Calendar API
+
+### Calendar.Container
+
+| Parameter                         | Type                                 | Description                                                   |
+| --------------------------------- | ------------------------------------ | ------------------------------------------------------------- |
+| **children**                      | ReactNode                            | A node of components to be rendered inside the calendar       |
+| **onSelectionChanged** (optional) | (selectedDate: Date \| null) => void | A callback to be called every time the selected date changes  |
+
+### Calendar.Header
+
+| Parameter           | Type        | Description                                                   |
+| ------------------- | ----------- | ------------------------------------------------------------- |
+| **text**            | string      | A string to be rendered on the header                         |
+
+### Calendar.ColumnsContainer
+
+| Parameter           | Type        | Description                                                   |
+| ------------------- | ----------- | ------------------------------------------------------------- |
+| **children**        | ReactNode   | A ReactNode composed of  `Calendar.Column`                    |
+
+### Calendar.Column
+
+| Parameter                 | Type                                                     | Description                                                   |
+| ------------------------- | -------------------------------------------------------- | ------------------------------------------------------------- |
+| **weekDay**               | CalendarLabelsIndex                                      | The index of the week day the column corresponds              |
+| **renderText** (optional) | (weekDay: CalendarLabelsIndex) => string \| ReactElement | A function that renders the label of a column                 |
+
+```js
+type CalendarLabelsIndex = '0' | '1' | '2' | '3' | '4' | '5' | '6';
+```
+
+### Calendar.ItemsContainer
+
+| Parameter                     | Type                                                                 | Description                                                        |
+| ----------------------------- | -------------------------------------------------------------------- | ------------------------------------------------------------------ |
+| **startDate**                 | Date                                                                 | The start of the range of dates to be displayed                    |
+| **endDate**                   | Date                                                                 | The end of the range of dates to be displayed                      |
+| **fillEmptySlots** (optional) | boolean                                                              | Defines if the calendar will render dates outside of the defined   |
+| **renderItem** (optional)     | (itemData: CalendarItemProps, key: number \| string) => ReactElement | A function responsible for rendering the items within the calendar |
+
+### Calendar.Item
+
+| Parameter           | Type                                                   | Description                                                        |
+| ------------------- | ------------------------------------------------------ | ------------------------------------------------------------------ |
+| **itemDate**        | Date                                                   | The date of the item                                               |
+| **disabled**        | boolean                                                | Defines if the user can interact with the item                     |
+| **status**          | 'normal' \| 'pending' \| 'alert' \| 'done' \| 'hidden' | The status of the item. This change the style according the status |
+| **renderText**      | (date: Date) => string \| ReactElement                 | A function responsible for rendering the item text                 |
+
+## Tasks API
+
+### TasksContainer
+
+| Parameter           | Type        | Description                                                   |
+| ------------------- | ----------- | ------------------------------------------------------------- |
+| **children**        | ReactNode   | The tasks to be rendered on the list                          |
+
+### Task.Container
+
+| Parameter           | Type        | Description                                                   |
+| ------------------- | ----------- | ------------------------------------------------------------- |
+| **children**        | ReactNode   | A node of components to be rendered inside the task component |
+| **icon** (optional) | ElementType | A icon element to be rendered on the left corner of the task  |
+
+### Task.Content
+
+| Parameter           | Type        | Description                                                   |
+| ------------------- | ----------- | ------------------------------------------------------------- |
+| **children**        | ReactNode   | A node of components to be rendered as the task content       |
+
+### Task.Title
+
+| Parameter           | Type        | Description                                                   |
+| ------------------- | ----------- | ------------------------------------------------------------- |
+| **children**        | ReactNode   | The content to be rendered inside the title of the task       |
+
+### Task.Message
+
+| Parameter           | Type        | Description                                                   |
+| ------------------- | ----------- | ------------------------------------------------------------- |
+| **children**        | ReactNode   | The content to be rendered inside the message of the task     |
+
+### Task.Actions
+
+| Parameter           | Type        | Description                                                   |
+| ------------------- | ----------- | ------------------------------------------------------------- |
+| **children**        | ReactNode   | The actions of the task                                       |
+
+### Task.Action
+
+This component also inherits from `ButtonHTMLAttributes<HTMLButtonElement>`
+
+| Parameter           | Type        | Description                                                   |
+| ------------------- | ----------- | ------------------------------------------------------------- |
+| **icon**            | ElementType | A icon to bee rendered inside the action button               |

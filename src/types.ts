@@ -36,7 +36,7 @@ export interface CalendarHeaderProps {
 
 export interface CalendarColumnProps {
 	/**
-	 * The index of the week day the column correspond to.
+	 * The index of the week day the column corresponds.
 	 * Start at '0' for sunday and ends at '6' for sunday
 	 */
 	weekDay: CalendarLabelsIndex;
