@@ -70,7 +70,7 @@ export interface CalendarItemsContainerProps {
 
 export interface CalendarItemProps {
 	/** The date of the item */
-	itemDate: Date | null;
+	itemDate: Date;
 	/** Defines if the user can interact with the item */
 	disabled: boolean;
 	/** The status of the item. This change the style according the status */

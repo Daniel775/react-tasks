@@ -9,14 +9,14 @@ export function CalendarItem({
 	renderText
 }: CalendarItemProps): React.FunctionComponentElement<CalendarItemProps> {
 	const calendar = useCalendar();
-	const itemTime = itemDate?.getTime();
+	const itemTime = itemDate.getTime();
 
 	function handleSelection() {
 		if (disabled) {
 			return;
 		}
 
-		calendar.setSelectedItem(itemTime || null);
+		calendar.setSelectedItem(itemTime);
 	}
 
 	return (
