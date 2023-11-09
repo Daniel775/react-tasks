@@ -7,7 +7,7 @@ export function CalendarHeader({
 	return <StyledCalendarHeader>{text}</StyledCalendarHeader>;
 }
 
-function getDefaultCalendarTitle(): string {
+export function getDefaultCalendarTitle(): string {
 	const today = new Date();
 
 	return today.toLocaleDateString('pt-BR', {

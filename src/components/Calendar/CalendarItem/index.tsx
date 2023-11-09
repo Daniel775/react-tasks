@@ -25,6 +25,7 @@ export function CalendarItem({
 			$disabled={disabled}
 			$selected={calendar.selectedItem === itemTime}
 			onClick={handleSelection}
+			role="button"
 		>
 			{!!itemDate && renderText(itemDate)}
 		</StyledCalendarItem>
