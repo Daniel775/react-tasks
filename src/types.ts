@@ -27,6 +27,8 @@ export interface CalendarContainerProps {
 	 * @returns void
 	 */
 	onSelectionChanged?: (selectedDate: Date | null) => void;
+	/** The initial date to be selected on the calendar */
+	initialSelectedDate?: Date;
 }
 
 export interface CalendarHeaderProps {
