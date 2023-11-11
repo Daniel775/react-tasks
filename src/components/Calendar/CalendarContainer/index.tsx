@@ -8,9 +8,18 @@ import { CalendarContainerProps } from '../../../types';
 
 function Container({
 	children,
+	initialSelectedDate,
 	onSelectionChanged
 }: CalendarContainerProps): React.FunctionComponentElement<CalendarContainerProps> {
 	const calendar = useCalendar();
+
+	useEffect(() => {
+		if (!initialSelectedDate) {
+			return;
+		}
+
+		calendar.setSelectedItem(initialSelectedDate.getTime());
+	}, [initialSelectedDate]);
 
 	useEffect(() => {
 		if (!onSelectionChanged) {
