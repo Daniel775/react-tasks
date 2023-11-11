@@ -137,10 +137,11 @@ The code above will result in someting like:
 
 ### Calendar.Container
 
-| Parameter                         | Type                                 | Description                                                   |
-| --------------------------------- | ------------------------------------ | ------------------------------------------------------------- |
-| **children**                      | ReactNode                            | A node of components to be rendered inside the calendar       |
-| **onSelectionChanged** (optional) | (selectedDate: Date \| null) => void | A callback to be called every time the selected date changes  |
+| Parameter                          | Type                                 | Description                                                   |
+| ---------------------------------- | ------------------------------------ | ------------------------------------------------------------- |
+| **children**                       | ReactNode                            | A node of components to be rendered inside the calendar       |
+| **initialSelectedDate** (optional) | Date                                 | The initial date to be selected on the calendar               |
+| **onSelectionChanged** (optional)  | (selectedDate: Date \| null) => void | A callback to be called every time the selected date changes  |
 
 ### Calendar.Header
 
