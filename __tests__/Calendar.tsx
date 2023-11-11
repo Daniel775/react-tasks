@@ -37,6 +37,29 @@ describe('Calendar.Container', () => {
 			result.current.setSelectedItem(today.getTime());
 		});
 	});
+
+	it('shoud start with no selected date if the "initialSelectedDate" is not set', () => {
+		const wrapper = ({ children }: { children: ReactNode }) => (
+			<Calendar.Container>{children}</Calendar.Container>
+		);
+
+		const { result } = renderHook(useCalendar, { wrapper });
+
+		expect(result.current.selectedItem).toBeNull();
+	});
+
+	it('shoud start with the default item selected if "initialSelectedDate" is set', () => {
+		const today = new Date();
+		const wrapper = ({ children }: { children: ReactNode }) => (
+			<Calendar.Container initialSelectedDate={today}>
+				{children}
+			</Calendar.Container>
+		);
+
+		const { result } = renderHook(useCalendar, { wrapper });
+
+		expect(result.current.selectedItem).toBe(today.getTime());
+	});
 });
 
 describe('Calendar.Header', () => {
